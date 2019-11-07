@@ -1,7 +1,7 @@
-const client = contentful.createClient({
-  space: "o7j1dskg3pb1",
-  accessToken: "_aYiYTP_q1IWV7bpwyIA5loW4u0K0g79d-ahPQGdV2g"
-});
+// const client = contentful.createClient({
+//   space: "o7j1dskg3pb1",
+//   accessToken: "_aYiYTP_q1IWV7bpwyIA5loW4u0K0g79d-ahPQGdV2g"
+// });
 
 //Variables
 
@@ -25,16 +25,16 @@ class Products{
   async getProducts(){
     try{
 
-      let contentful = await client.getEntries({
-        content_type: "comfyHouseProducts"
-      });
-      console.log(contentful);
+//       let contentful = await client.getEntries({
+//         content_type: "comfyHouseProducts"
+//       });
+//       console.log(contentful);
 
-      // let result = await fetch('products.json');
-      // let data = await result.json();
-      // let products = data.items;
+      let result = await fetch('products.json');
+      let data = await result.json();
+      let products = data.items;
 
-      let products = contentful.items;
+//       let products = contentful.items;
 
       products = products.map(item => {
         const {title, price} = item.fields;
